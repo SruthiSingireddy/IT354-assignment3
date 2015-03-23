@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!--jQuery Library -->
+		<script src="jquery-1.11.2.min.js"></script>
+		
+		<!--jQuery Mobile Library -->
+		<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+		<script src="jquery.js"></script>
+		<script src="jquery.mobile-1.4.5.js"></script>
+        <title>Weather app</title>
+		
+    </head>
+    <body>
+	<div data-role="page" >
+	
+		<div data-role="header" data-position="fixed"> 
+			<h1>Weather</h1> 
+		</div><!-- end of header-->
+		
+		
+		
+		City:<input type="text" name="city" id="city" value="" data-mini="true" />
+		<button id="action-button">Go</button>
+		
+		<div id="showdata"></div>
+		
+			<div data-role="footer" data-position="fixed"> 
+				<div data-role="navbar">
+			<ul>
+				<li><a id="button-refresh" href="index.html" >Weather</a></li>
+				<li><a id="button-refresh" href="location.html">Location</a></li>
+			</ul>
+		</div><!-- end of navbar -->
+			</div><!-- end of footer -->
+	</div>
+		
+
+<script type="text/javascript" src="js/index.js"></script>		
+     
+      
+        
+    </body>
+</html>
