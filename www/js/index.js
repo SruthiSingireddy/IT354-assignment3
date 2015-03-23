@@ -1,25 +1,29 @@
 
-$('#button-refresh').click(function() {
-	
-	function refreshPage()
+// Reference: http://www.w3schools.com/html/html5_geolocation.asp
+
+var x = document.getElementById("getLocation");
+
+	function getLocation() 
 	{
-		  $.mobile.changePage
-		  (
-			window.location.href,
-			{
-			  allowSamePageTransition : true,
-			  transition              : 'none',
-			  showLoadMsg             : false,
-			  reloadPage              : true
-			}
-		  );
+		if (navigator.geolocation) 
+		{
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else { 
+					x.innerHTML = "Browser doesn't support geo location feature";
+			   }
 	}
 
-});
+	function showPosition(position)
+	{
+		x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+	}
+			
 
 $('#action-button').click(function() {
 
 	var city = $("#city").val();
+	
+	//reference: https://api.jquery.com/remove/
 	
 	if( $("#showdata").is(':empty') )
 	{
@@ -38,7 +42,8 @@ $('#action-button').click(function() {
 			return date;
 		}
 
-	
+	//resource: http://bugs.openweathermap.org/projects/api/wiki/Api_2_5_forecast
+	//Resource: http://forums.asp.net/t/2005945.aspx?Using+JQuery+to+retrieve+json+web+services+data
 	//json
 	 $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+'&mode=json&units=metric&cnt=5', function(data)
 	 {

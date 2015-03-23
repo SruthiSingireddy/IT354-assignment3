@@ -18,34 +18,35 @@
         <title>Weather app</title>
 		
     </head>
-    <body>
-	<div data-role="page" >
 	
-		<div data-role="header" data-position="fixed"> 
-			<h1>Weather</h1> 
-		</div><!-- end of header-->
+    <body>
+		<!--Reference: jquery mobile: http://api.jquerymobile.com/category/jqmicons/ -->
+		<div data-role="page" >
 		
-		
-		
-		City:<input type="text" name="city" id="city" value="" data-mini="true" />
-		<button id="action-button">Go</button>
-		
-		<div id="showdata"></div>
-		
-			<div data-role="footer" data-position="fixed"> 
-				<div data-role="navbar">
-			<ul>
-				<li><a id="button-refresh" href="index.html" >Weather</a></li>
-				<li><a id="button-refresh" href="location.html">Location</a></li>
-			</ul>
-		</div><!-- end of navbar -->
-			</div><!-- end of footer -->
-	</div>
-		
-
-<script type="text/javascript" src="js/index.js"></script>		
-     
-      
-        
+			<div data-role="header" data-position="fixed"> 
+				<h1>Weather</h1> 
+			</div><!-- end of header-->
+			
+			<div data-role="fieldcontain">
+				 <label for="city">Enter City Name:</label>
+				 <input type="text" name="city" id="city" value="" data-inline="true" />
+				<button id="action-button" data-icon="info" data-inline="true">Go</button>
+			</div><!-- end of fieldcontain-->
+			
+			<div id="showdata">
+			</div><!-- end of showdata-->
+			
+				<div data-role="footer" data-position="fixed"> 
+					<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-role="button" data-theme="b" >Weather</a></li>
+					<li><a href="location.html" data-role="button" data-theme="b">Location</a></li>
+				</ul>
+			</div><!-- end of navbar -->
+				</div><!-- end of footer -->
+		</div>
+			
+		<script type="text/javascript" src="js/index.js"></script>		
     </body>
+	
 </html>

@@ -16,47 +16,33 @@
 		<script src="jquery.js"></script>
 		<script src="jquery.mobile-1.4.5.js"></script>
         <title>Weather app</title>
-		
-		
-    </head>
+	</head>
+	
     <body>
 		<div data-role="header" data-position="fixed"> 
 			<h1>Weather</h1> 
 		</div><!-- header-->
 		
-		
 		<div data-role="content">
-		<p>Click the button to get your coordinates.</p>
+		
+		<!-- Reference: http://www.w3schools.com/html/html5_geolocation.asp-->
+		<p>Click below button to find your current latitude and longitude.</p>
 
-			<button onclick="getLocation()">Try It</button>
+			<button onclick="getLocation()" data-icon="search" data-inline="true">Where Am I</button>
 
-			<p id="demo"></p>
+			<p id="getLocation"></p>
 
 			
 		</div><!-- content -->
 		<div data-role="footer" data-position="fixed"> 
 			<div data-role="navbar">
 			<ul>
-				<li><a  href="index.html">Weather</a></li>
-				<li><a href="location.html">Location</a></li>
+				<li><a  href="index.html" data-role="button" data-theme="b">Weather</a></li>
+				<li><a href="location.html" data-role="button" data-theme="b">Location</a></li>
 			</ul>
 		</div><!-- /navbar -->
 		</div><!-- footer -->
-	<script>
-			var x = document.getElementById("demo");
-
-			function getLocation() {
-				if (navigator.geolocation) {
-					navigator.geolocation.getCurrentPosition(showPosition);
-				} else { 
-					x.innerHTML = "Geolocation is not supported by this browser.";
-				}
-			}
-
-			function showPosition(position) {
-				x.innerHTML = "Latitude: " + position.coords.latitude + 
-				"<br>Longitude: " + position.coords.longitude;	
-			}
-			</script>
+	
+		<script type="text/javascript" src="js/index.js"></script>	
 	</body>
 </html>
