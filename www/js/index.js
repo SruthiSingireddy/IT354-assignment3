@@ -25,10 +25,11 @@ $('#action-button').click(function() {
 	
 	//reference: https://api.jquery.com/remove/
 	
-	if( $("#showdata").is(':empty') )
+	if( $("#showdata").is(':empty') && $("#info").is(':empty') )
 	{
 		
 	}else{
+		$( '#info').children().remove();
 		$( '#showdata').children().remove();
 	}
 	function date(timestamp)
@@ -48,17 +49,17 @@ $('#action-button').click(function() {
 	 $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+'&mode=json&units=metric&cnt=5', function(data)
 	 {
 		
-		var html = '';
-		html += '<div class="entry1">';
-		html += 'City: ' + data.city.name + '<br/>';
+		var html = '<div class="entry1">';
+		html += '<b>City:</b> ' + data.city.name + '<br/>';
 		html += 'Longitude: ' + data.city.coord.lon + '<br/>';
 		html += 'Latitude: ' + data.city.coord.lat + '<br/><hr>';
-		$('#showdata').append(html);
+		$('#info').append(html);
 		$.each(data.list, function(key,val){
 			var timestamp = val.dt;
 			var format = date(timestamp);
 			var weather = this.weather;
-			 var html = '<div class="entry">';
+			
+			var html = '<div class="entry">';
 			 html += 'Date ' + format + '<br/>';
 			 html += 'Minimum temperature ' + Math.round(val.temp.min) + '<br/>';
 			 html += 'Maximum temperature ' + Math.round(val.temp.max) + '<br/>';
